@@ -5,16 +5,16 @@ using Newtonsoft.Json;
 
 namespace GenericConversion
 {
-    internal class ToJson
+    internal class ConvertToJson
     {
-        public string DataTableToJson(DataTable table)
+        public static string DataTableToJson(DataTable table)
         {
             string JSONString = string.Empty;
             JSONString = JsonConvert.SerializeObject(table);
             return JSONString;
         }
 
-        public string ListToJson<T>(T list)
+        public static string ListToJson<T>(List<T> list)
         {
             string JSONString = string.Empty;
             JSONString = JsonConvert.SerializeObject(list);

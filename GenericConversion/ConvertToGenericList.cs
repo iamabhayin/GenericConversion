@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace GenericConversion
 {
-    internal class ToGenericList
+    internal class ConvertToGenericList
     {
         public static List<T> ConvertDataTable<T>(DataTable dt)
         {
@@ -32,9 +33,11 @@ namespace GenericConversion
                 foreach (PropertyInfo pro in temp.GetProperties())
                 {
                     if (pro.Name == column.ColumnName)
-                        pro.SetValue(obj, dr[column.ColumnName], null);
-                    else
-                        continue;
+                    {
+                        var value = Convert.ChangeType(dr[column.ColumnName].ToString(), pro.PropertyType , CultureInfo.InvariantCulture);
+                        //pro.SetValue(obj, dr[column.ColumnName], null);
+                        pro.SetValue(obj, value, null);
+                    }
                 }
             }
             return obj;

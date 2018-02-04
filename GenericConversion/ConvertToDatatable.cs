@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GenericConversion
 {
-    internal class ToDatatable
+    internal class ConvertToDatatable
     {
         public static DataTable ToDataTable<T>(List<T> items)
         {

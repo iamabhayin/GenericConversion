@@ -44,11 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Convert.cs" />
+    <Compile Include="Cast.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ToDatatable.cs" />
-    <Compile Include="ToGenericList.cs" />
-    <Compile Include="ToJson.cs" />
+    <Compile Include="ConvertToDatatable.cs" />
+    <Compile Include="ConvertToGenericList.cs" />
+    <Compile Include="ConvertToJson.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
