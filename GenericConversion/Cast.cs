@@ -18,14 +18,39 @@
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="json"></param>
+        /// <returns></returns>
+        public static DataTable ToDataTable(string json)
+        {
+            var _dataTable = ConvertToDatatable.JsonToDataTable(json);
+            return _dataTable;
+        }
+
+        /// <summary>
         /// Convert DataTable into Generic List.
         /// </summary>
         /// <typeparam name="T">Generic type object.</typeparam>
         /// <param name="dataTable">DataTable</param>
+        /// /// <param name="ignore">Pass 'true' if want to match the fields name between DataTable and Generic type T else 'false'.</param>
         /// <returns>List of generic type object.</returns>
-        public static List<T> ToGenericList<T>(DataTable dataTable)
+        public static List<T> ToGenericList<T>(DataTable dataTable, bool ignore)
         {
-            var _list = ConvertToGenericList.ConvertDataTable<T>(dataTable);
+            var _list = ConvertToGenericList.ConvertDataTable<T>(dataTable, ignore);
+            return _list;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="json">Json formatted string.</param>
+        /// /// <param name="ignore">Pass 'true' if want to match the fields name between Json and Generic type T else 'false'.</param>
+        /// <returns></returns>
+        public static List<T> ToGenericList<T>(string json, bool ignore)
+        {
+            var _list = ConvertToGenericList.ConvertDataTable<T>(json, ignore);
             return _list;
         }
 
@@ -35,9 +60,9 @@
         /// <typeparam name="T">Generic type object.</typeparam>
         /// <param name="data">Generic list.</param>
         /// <returns>Json formatted string.</returns>
-        public static string ToJson<T>(List<T> data)
+        public static string ToJson<T>(T data)
         {
-            string json = ConvertToJson.ListToJson<T>(data);
+            string json = ConvertToJson.JsonSerializer<T>(data);
             return json;
         }
 
@@ -52,14 +77,6 @@
             return json;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="value"></param>
-        private static void ObjectToJson<T>(T value)
-        {
 
-        }
     }
 }
