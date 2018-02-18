@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cast.cs" />
+    <Compile Include="ConvertToObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ConvertToDatatable.cs" />
     <Compile Include="ConvertToGenericList.cs" />

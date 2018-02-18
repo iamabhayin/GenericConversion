@@ -77,6 +77,29 @@
             return json;
         }
 
+        /// <summary>
+        /// Convert a json object string into generic type object.
+        /// </summary>
+        /// <typeparam name="T">T is type in which you want to convert the json string.</typeparam>
+        /// <param name="json">json string</param>
+        /// <param name="checkFieldName">Pass true for checking the fields of T type and fields in json string.</param>
+        /// <returns>Return the T type object.</returns>
+        public static T ToObject<T>(string json, bool checkFieldName)
+        {
+            var obj = ConvertToObject.JsonDeserialize<T>(json, checkFieldName);
+            return obj;
+        }
+
+        /// <summary>
+        /// Convert a json string into object.
+        /// </summary>
+        /// <param name="json">Json string</param>
+        /// <returns>Return object type.</returns>
+        public static object ToObject(string json)
+        {
+            var obj = ConvertToObject.JsonDeserialize<object>(json, false);
+            return obj;
+        }
 
     }
 }

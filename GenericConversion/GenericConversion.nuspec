@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AD.GenericConversion</id>
+    <version>2.0.2</version>
+    <title>GenericConversion</title>
+    <authors>Abhay</authors>
+    <owners>Abhay</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This Generic Conversion library totally gonna save your time in conversion that we mostly spend on net for searching conversion methods, Here you can convert Generic list/Objects into DataTable or Json or vice versa.</description>
+    <releaseNotes>This version released with some new features.</releaseNotes>
+    <copyright>Copyright 2018 - Abhay</copyright>
+    <tags>Generic C# VB DataTable Json .Net</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="10.0.3" />
+    </dependencies>
+  </metadata>
+</package>

@@ -39,7 +39,7 @@ namespace GenericConversion
                 //put a breakpoint here and check datatable
                 return dataTable;
             }
-            catch(Exception ex)
+            catch
             {
                 throw new Exception("Some error occured while converting DataTable into Generic type T.");
             }
